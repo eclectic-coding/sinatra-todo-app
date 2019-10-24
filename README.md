@@ -6,7 +6,8 @@
 - Build an MVC Sinatra application.
 - Use ActiveRecord with Sinatra.
 - Use multiple models.
-- Use at least one `has_many` relationship on a User model and one `belongs_to` relationship on another model.
+- Use at least one `has_many` relationship on a User model
+    - one `belongs_to` relationship on another model.
 - Must have user accounts - users must be able to sign up, sign in, and sign out.
 - Validate uniqueness of user login attribute (username or email).
 - Once logged in, a user must have the ability to create, read, update and destroy the resource that belongs_to user.
