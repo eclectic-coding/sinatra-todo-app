@@ -17,3 +17,4 @@
     - validate username as unique
     - validate password as 8 characters, upper and lower
     - validate email address 
+- RSPEC
