@@ -1,29 +1,19 @@
-class UsersController < Sinatra::Base
+require 'pry'
 
-  get '/users' do
-    if signed_in?
-      @user = User.find(session[:user_id])
-      erb :'/users/show'
-    else
-      redirect to '/login'
-    end
+class UsersController < ApplicationController
+
+  get '/signup' do
+    erb :'/users/signup'
   end
 
-  # get /users/:id
-  get '/users/:id' do
-    if signed_in?
-      @user = User.find(params[:id])
-      erb :'/users/show'
+  post '/signup' do
+    if params[:name].empty? || params[:email].empty? || params[:password].empty?
+      redirect '/signup'
     else
-      redirect to '/login'
+      User.create(name: params[:name], email: params[:email], password: params[:password])
+      session[:user_id] = @user.id
+      redirect '/todos'
     end
   end
-
-  # get /signin
-  # if signed in
-  # erb :/users/show
-
-
-
 
 end
