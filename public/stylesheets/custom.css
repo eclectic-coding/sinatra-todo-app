@@ -3,3 +3,7 @@
 .test-text {
   color: blueviolet;
 }
+
+.container-view {
+  height: 80vh;
+}
