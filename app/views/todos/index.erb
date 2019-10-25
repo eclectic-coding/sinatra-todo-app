@@ -1,0 +1,9 @@
+<h2>Here are all your Todos List</h2>
+
+<% Array(@todos).each do |todo| %>
+  <li>
+    <a href="/todos/<%= todo.id %>">
+      <%= todo.title %>
+    </a>
+  </li>
+<% end%>
