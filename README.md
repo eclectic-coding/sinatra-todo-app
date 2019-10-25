@@ -1,6 +1,5 @@
 # Sinatra TODO App 
-
-
+Add README documentation here 
 ## Project Requirements   
 
 - Build an MVC Sinatra application.
@@ -13,8 +12,7 @@
 - Once logged in, a user must have the ability to create, read, update and destroy the resource that belongs_to user.
 - Ensure that users can edit and delete only their own resources - not resources created by other users.
 - Validate user input so bad data cannot be persisted to the database.
-
-**BONUS**: Display validation failures to user with error messages. (This is an optional feature, challenge yourself and give it a shot!)
+- **BONUS**: Display validation failures to user with error messages. (This is an optional feature, challenge yourself and give it a shot!)
 
 Features to add after product requirements are met: [Future Features](./FUTURE_FEATURES.MD')
 
