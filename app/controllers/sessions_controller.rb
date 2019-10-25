@@ -1,7 +1,9 @@
-class SessionsController < Sinatra::Base
+require './config/environment'
+
+class SessionsController < ApplicationController
 
   get '/login' do
-    erb :'sessions/login'
+    erb :"sessions/login"
   end
 
   post '/login' do
@@ -13,4 +15,10 @@ class SessionsController < Sinatra::Base
       redirect '/login'
     end
   end
+
+  get '/logout' do
+    session.clear
+    redirect '/login'
+  end
+
 end

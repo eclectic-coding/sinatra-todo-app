@@ -1,5 +1,7 @@
 require './config/environment'
-require 'securerandom'
+require 'dotenv'
+Dotenv.load
+#require 'securerandom'
 
 class ApplicationController < Sinatra::Base
 
@@ -7,7 +9,8 @@ class ApplicationController < Sinatra::Base
     set :public_folder, 'public'
     set :views, 'app/views'
     enable :sessions
-    set :session_secret, ENV.fetch('SESSION_SECRET') { SecureRandom.hex(64) }
+    set :session_secret, ENV['SESSION_SECRET'] { SecureRandom.hex(64) }
+    #set :session_secret, 'ToDo_secret'
   end
 
   get '/' do
@@ -20,8 +23,7 @@ class ApplicationController < Sinatra::Base
     end
 
     def current_user
-      @current_user ||= User.find_by(id: session[:user_id])
+      @current_user ||= User.find_by(id: session[:user_id]) if session[:user_id]
     end
   end
-
 end
