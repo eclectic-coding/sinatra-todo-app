@@ -12,6 +12,7 @@
     - Layout file
     - Default header and footer
 - User accounts
+    - ~~DOTENV session_secret or [SecureRandom](https://github.com/sinatra/sinatra/issues/1187)~~
     - Stay logged in option 
     - validate username as unique
     - validate password as 8 characters, upper and lower
