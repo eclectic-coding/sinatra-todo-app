@@ -8,6 +8,7 @@
         - SASS gem
         - Mobile first design
         - ~~Card (white) over off white styling background~~ 
+- Add error messages with [SINATRA-FLASH](https://github.com/SFEley/sinatra-flash)
 - Partials
     - Layout file
     - ~~Default header~~
