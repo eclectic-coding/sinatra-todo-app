@@ -11,22 +11,15 @@
   <!-- Add custom css -->
   <link rel="stylesheet" href="/stylesheets/custom.css">
   <!-- Google Fonts -->
-
+  <link href="https://fonts.googleapis.com/css?family=Big+Shoulders+Text|Roboto&display=swap" rel="stylesheet">
+  <!-- Fontawesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
   <title>SinatraTodo</title>
 </head>
 <body>
 <header>
-  <!--  <nav class="navbar navbar-light bg-dark">-->
-  <!--    <a class="navbar-brand text-light ml-5">Sinatra ToDo App</a>-->
-  <%# if !logged_in? %>
-  <!--      <a class="btn btn-primary ml-auto mr-3" href="/create_new" role="button">Create Account</a>-->
-  <!--      <a class="btn btn-primary" href="/login" role="button">Login</a>-->
-  <%# else %>
-  <!--      <a class="btn btn-primary" href="/logout" role="button">Logout</a>-->
-  <%#  end %>
-  <!--  </nav>-->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand text-light" href="#">Sinatra ToDo App</a>
+    <a class="navbar-brand text-light" href="/">Sinatra ToDo App</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -35,7 +28,7 @@
       <ul class="navbar-nav ml-auto">
         <% if !logged_in? %>
           <li class="nav-item">
-            <a class="btn btn-sm btn-outline-secondary text-light m-1" href="/create_new" role="button">Create Account</a>
+            <a class="btn btn-sm btn-outline-secondary text-light m-1" href="/signup" role="button">Create Account</a>
           </li>
           <li class="nav-item">
             <a class="btn btn-sm btn-outline-secondary text-light m-1" href="/login" role="button">Login</a>
