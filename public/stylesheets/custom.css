@@ -6,3 +6,10 @@
 .footer {
   background-color: #f5f5f5;
 }
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-size: cover;
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("/images/background.jpg") no-repeat fixed center;
+  background-size: auto;
+}
