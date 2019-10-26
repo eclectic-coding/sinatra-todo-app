@@ -7,10 +7,10 @@
         - [Sprockets](http://recipes.sinatrarb.com/p/asset_management/sprockets#article)
         - SASS gem
         - Mobile first design
-        - Card (white) over off white styling background 
+        - ~~Card (white) over off white styling background~~ 
 - Partials
     - Layout file
-    - Default header
+    - ~~Default header~~
     - ~~Default footer~~
 - User accounts
     - ~~DOTENV session_secret or [SecureRandom](https://github.com/sinatra/sinatra/issues/1187)~~

@@ -1,11 +1,4 @@
 /*Bootstrap style overrides*/
-.container-full-height {
-  height: 80vh;
-}
-
-.footer {
-  background-color: #f5f5f5;
-}
 
 body {
   font-family: 'Roboto', sans-serif;
@@ -16,4 +9,12 @@ body {
 
 h1,h2,h3,h4,h5 {
   font-family: 'Big Shoulders Text', cursive;
+}
+
+.container-full-height {
+  min-height: calc(100vh - (160px));
+}
+
+.footer {
+  background-color: #f5f5f5;
 }
