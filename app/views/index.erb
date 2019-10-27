@@ -1,26 +1,22 @@
 <div class="container-fluid">
-    <% if logged_in? %>
-      <div class="card mx-auto shadow-sm bg-white rounded">
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-            content.</p>
-          <button><a href="/todos/new"> Create New todo </a></button>
-          <button><a href="/signout"> Sign-Out </a></button>
-          <button><a href="/users/<%= current_user.id %>"> Edit-Profile </a></button>
-          <button><a href="/todos"> Show-My-ToDos </a></button>
-          <p>Welcome, <strong><%= current_user.name.upcase %></strong></p>
-        </div>
+  <% if logged_in? %>
+    <div class="card mx-auto mt-5 shadow-sm bg-white rounded" style="width: 60vw;">
+      <div class="card-body">
+        <h5 class="card-title">Welcome, <%= current_user.name.upcase %></h5>
+        <p class="card-text">todo interface here</p>
+        <a class="btn btn-primary btn-sm text-light mx-1 my-3" href="/todos/new" role="button">New ToDo</a>
+        <a class="btn btn-primary btn-sm text-light mx-1 my-3" href="/todos/delete" role="button"> Delete ToDo </a>
       </div>
+    </div>
 
-    <% else %>
-      <div class="card mx-auto mt-5 shadow-sm bg-white rounded" style="width: 60vw;">
-        <div class="card-body">
-          <h5 class="card-title text-center">Begin Here</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-            content.</p>
-         
-        </div>
+  <% else %>
+    <div class="card mx-auto mt-5 shadow-sm bg-white rounded" style="width: 60vw;">
+      <div class="card-body">
+        <h5 class="card-title text-center">Begin Here</h5>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+          content.</p>
+
       </div>
-    <% end %>
+    </div>
+  <% end %>
 </div>
