@@ -14,40 +14,19 @@ Clone this repository to your computer:
 ```
 git clone https://github.com/eclectic-coding/sinatra-todo-app
 ```
-Navigate to your newly created directory and run `bundle install`.
+Navigate to your newly created directory and run `bundle install`. Afterwards, run `shotgun` to start the app and use for your productivity.
 
 ## Using Sinatra ToDo App
 
 Say what the step will be
 
-And repeat
-
-End with an example of getting some data out of the system or using it for a little demo
-
-
-
-Explain how to run the automated tests for this system
-
-### Break down into end to end tests
-
-Explain what these tests test and why
-
-### And coding style tests
-
-Explain what these tests test and why
-
 ## Deployment
 
-Add additional notes about how to deploy this on a live system
-
-## Built With
-
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
+Add deploy instructions when [Heroku](https://www.heroku.com/) branch is finished.
 
 ## Contributing
 
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
+Please read [CONTRIBUTING.md](./CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests to us.
 
 ## Versioning
 
@@ -55,7 +34,7 @@ We use [SemVer](http://semver.org/) for versioning. For the versions available, 
 
 ## Authors
 
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
+* **Chuck Smith** - *Initial work* - [EclecticCoding](https://github.com/eclectic-coding/sinatra-todo-app/graphs/contributors)
 
 See also the list of [contributors]() who participated in this project.
 
