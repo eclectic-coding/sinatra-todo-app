@@ -1,0 +1,21 @@
+<div class="container-fluid">
+  <div class="card mx-auto mt-5 shadow-sm bg-white rounded" style="width: 60vw;">
+    <div class="card-body">
+      <h3 class="card-title">Welcome, <%= current_user.name.upcase %></h3>
+
+      <p>Would you like to delete?</p>
+      <ul class="pl-0">
+          <li class="list-group-item d-flex justify-content-between my-2">
+            <a href="todos/<%= @todo.id %>" class="text-decoration-none"><%= @todo.title %></a>
+          </li>
+      </ul>
+
+      <form method="POST" action="/todos/<%= @todo.id %>">
+        <input type="hidden" name="_method" value="delete" />
+        <input type="submit" value="delete" />
+      </form>
+
+<!--      <a class="btn btn-primary btn-sm text-light mx-1 my-3" href="/todos/delete" role="button"> Delete ToDo </a>-->
+    </div>
+  </div>
+</div>

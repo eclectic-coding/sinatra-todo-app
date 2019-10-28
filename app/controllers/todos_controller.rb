@@ -1,59 +1,84 @@
+require 'pry'
 class TodosController < ApplicationController
 
-  # /todos
-  get '/todos' do
+  # CRUD - Create
+  get '/todos/new' do
     if logged_in?
-      @todos = Todo.all
-      erb :'todos/index'
+      @user = User.find_by(id: session[:user_id])
+      erb :'/todos/new'
     else
       redirect '/login'
     end
   end
 
   post '/todos' do
-    todo = Todo.new(params)
-    if todo.save
-      redirect "/todos/#{todo.id}"
+    if logged_in?
+      @user = User.find(session[:user_id])
+      # binding.pry
+
+      if params[:title].empty?
+        redirect '/todos/new'
+      else
+        @user = User.find_by(id: session[:user_id])
+        @todo = Todo.new
+        @todo.title = params[:title]
+        @todo.user_id = @user.id
+        @todo.save
+        redirect '/todos'
+      end
     else
-      redirect '/todos/new'
+      redirect '/login'
     end
   end
 
-  # /todos/new
-  get '/todos/new' do
-    @users = User.all
-    erb :'/todos/new'
+  # CRUD - Read
+  get '/todos' do
+    if logged_in?
+      @user = User.find(session[:user_id])
+      @todos = Todo.where(user_id: current_user)
+      # binding.pry
+      erb :'/todos/index'
+    else
+      redirect '/login'
+    end
   end
 
-  # edit todos
+  get '/todos/:id' do
+    @todo = Todo.find_by_id(params['id'])
+    erb :"todos/show"
+  end
+
+  # CRUD - update
+  patch '/todos/:id' do
+    @todo = Todo.find_by_id(params[:id])
+    params.delete('_method')
+    if @todo.update(params)
+      redirect '/todos'
+    else
+      redirect "/todos/#{@todo.id}/edit"
+    end
+  end
+
   get '/todos/:id/edit' do
-    @users = User.all
-    @todos = Todo.find_by_id(params[:id])
-    if @todo.user.id == current_user.id
+    @user = User.find_by(id: session[:user_id])
+    @todo = Todo.find_by_id(params[:id])
+    if @todo && @user == current_user
       erb :'/todos/edit'
     else
       redirect '/todos'
     end
   end
 
-  patch '/todos/:id' do
-    @todo = Todo.find_by_id(params[:id])
-    params.delete('_method')
-    if @todo.update(params)
-      redirect "/todos/#{@todo.id}"
-    else
-      redirect "/todos/#{@todo.id}/edit"
-    end
-  end
-
-  # delete todos
+  # CRUD - delete
   delete '/todos/:id' do
     @todo = Todo.find_by_id(params[:id])
     if @todo.user.id == current_user.id
       @todo.delete
       redirect '/todos'
     else
-      redirect '/todos'
+      redirect '/login'
     end
   end
+
 end
+

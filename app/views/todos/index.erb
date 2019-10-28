@@ -1,20 +1,24 @@
-
-
-<%# Array(@todos).each do |todo| %>
-<!--  <li>-->
-<!--    <a href="/todos/<%#= todo.id %>">-->
-      <%#= todo.title %>
-<!--    </a>-->
-<!--  </li>-->
-<%# end%>
-
 <div class="container-fluid">
   <% if logged_in? %>
-    <div class="card mx-auto mt-5 shadow-sm bg-white rounded" style="width: 60vw;">
+    <div class="card mx-auto mt-5 shadow-sm bg-white rounded" style="width: 90vw;">
       <div class="card-body">
         <h3 class="card-title">Welcome, <%= current_user.name.upcase %></h3>
         <h4>Here is your Todo List</h4>
-        <p class="card-text">todo interface here</p>
+        <ul class="pl-0">
+          <% @todos.each do |todo| %>
+            <li class="list-group-item d-flex justify-content-between my-2">
+              <a href="todos/<%= todo.id %>" class="text-decoration-none"><%= todo.title %></a>
+              <div>
+                <span class="mx-2">
+                  <a href="todos/<%= todo.id %>/edit" class="text-success"><i class="fas fa-pen"></i></a>
+                </span>
+                <span class="mx-2 text-danger">
+                  <a href="todos/<%= todo.id %>" class="text-danger"><i class="fas fa-trash text-danger"></i></a>
+                </span>
+              </div>
+            </li>
+          <% end %>
+        </ul>
         <a class="btn btn-primary btn-sm text-light mx-1 my-3" href="/todos/new" role="button">New ToDo</a>
         <a class="btn btn-primary btn-sm text-light mx-1 my-3" href="/todos/delete" role="button"> Delete ToDo </a>
       </div>

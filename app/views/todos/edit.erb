@@ -1,32 +1,24 @@
-
-
-<%# Array(@todos).each do |todo| %>
-<!--  <li>-->
-<!--    <a href="/todos/<%#= todo.id %>">-->
-      <%#= todo.title %>
-<!--    </a>-->
-<!--  </li>-->
-<%# end%>
-
 <div class="container-fluid">
   <% if logged_in? %>
     <div class="card mx-auto mt-5 shadow-sm bg-white rounded" style="width: 60vw;">
       <div class="card-body">
         <h3 class="card-title">Welcome, <%= current_user.name.upcase %></h3>
-        <h4>Edit a new Todo Item</h4>
-        <p class="card-text">todo interface here</p>
-        <a class="btn btn-primary btn-sm text-light mx-1 my-3" href="/todos/new" role="button">New ToDo</a>
-        <a class="btn btn-primary btn-sm text-light mx-1 my-3" href="/todos/delete" role="button"> Delete ToDo </a>
+        <form action="/todos/<%= @todo.id %>" method="post">
+          <input id="hidden" type="hidden" name="_method" value="patch">
+          <label for="editTodo1">Edit ToDo Item</label>
+            <textarea class="form-control" id="editTodo1" type="text" name="title"><%= @todo.title %></textarea><br>
+          <input class="btn btn-primary btn-sm text-light mx-1 my-3" type="submit" value="Update">
+        </form>
       </div>
     </div>
 
   <% else %>
     <div class="card mx-auto mt-5 shadow-sm bg-white rounded" style="width: 60vw;">
       <div class="card-body">
-        <h5 class="card-title text-center">Begin Here</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-          content.</p>
-
+        <h5 class="card-title text-center">Ut Oh</h5>
+        <p class="card-text">you do not appeared to be logged into to the App.</p>
+        <a class="btn btn-primary btn-sm text-light mx-1 my-3" href="/login" role="button">Login</a>
+        <a class="btn btn-primary btn-sm text-light mx-1 my-3" href="/signup" role="button">Create Account</a>
       </div>
     </div>
   <% end %>

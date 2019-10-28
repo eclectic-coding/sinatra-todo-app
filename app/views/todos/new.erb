@@ -1,22 +1,17 @@
 
 
-<%# Array(@todos).each do |todo| %>
-<!--  <li>-->
-<!--    <a href="/todos/<%#= todo.id %>">-->
-      <%#= todo.title %>
-<!--    </a>-->
-<!--  </li>-->
-<%# end%>
-
 <div class="container-fluid">
   <% if logged_in? %>
     <div class="card mx-auto mt-5 shadow-sm bg-white rounded" style="width: 60vw;">
       <div class="card-body">
         <h3 class="card-title">Welcome, <%= current_user.name.upcase %></h3>
         <h4>Create a new Todo Item</h4>
-        <p class="card-text">todo interface here</p>
-        <a class="btn btn-primary btn-sm text-light mx-1 my-3" href="/todos/new" role="button">New ToDo</a>
-        <a class="btn btn-primary btn-sm text-light mx-1 my-3" href="/todos/delete" role="button"> Delete ToDo </a>
+        <form action="/todos" method="POST">
+          <p><textarea type="text" name="title" placeholder="New Todo"></textarea></p>
+          <input type="submit" value="save" />
+        </form>
+<!--        <a class="btn btn-primary btn-sm text-light mx-1 my-3" href="/todos/new" role="button">New ToDo</a>-->
+<!--        <a class="btn btn-primary btn-sm text-light mx-1 my-3" href="/todos/delete" role="button"> Delete ToDo </a>-->
       </div>
     </div>
 
