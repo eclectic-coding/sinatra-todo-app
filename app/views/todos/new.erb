@@ -2,7 +2,7 @@
 
 <div class="container-fluid">
   <% if logged_in? %>
-    <div class="card mx-auto mt-5 shadow-sm bg-white rounded" style="width: 60vw;">
+    <div class="card mx-auto mt-5 shadow-sm bg-white rounded">
       <div class="card-body">
         <h3 class="card-title">Welcome, <%= current_user.name.upcase %></h3>
         <h4>Create a new Todo Item</h4>
@@ -16,7 +16,7 @@
     </div>
 
   <% else %>
-    <div class="card mx-auto mt-5 shadow-sm bg-white rounded" style="width: 60vw;">
+    <div class="card mx-auto mt-5 shadow-sm bg-white rounded">
       <div class="card-body">
         <h5 class="card-title text-center">Begin Here</h5>
         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
