@@ -3,11 +3,11 @@
 ### Features to add 
 - Styling
     - ~~Custom CSS~~
+    - ~~Mobile first design~~
+    - ~~Card (white) over off white styling background~~ -
     - SASS
-        - [Sprockets](http://recipes.sinatrarb.com/p/asset_management/sprockets#article)
-        - SASS gem
-        - Mobile first design
-        - ~~Card (white) over off white styling background~~ 
+      - [Sprockets](http://recipes.sinatrarb.com/p/asset_management/sprockets#article)
+      - SASS gem
 - Add error messages with [SINATRA-FLASH](https://github.com/SFEley/sinatra-flash)
 - ~~Partials~~
     - ~~Layout file~~
