@@ -12,6 +12,7 @@ class SessionsController < ApplicationController
       session[:user_id] = user.id
       redirect '/todos'
     else
+
       redirect '/login'
     end
   end

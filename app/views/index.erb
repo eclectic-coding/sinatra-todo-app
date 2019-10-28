@@ -10,13 +10,21 @@
     </div>
 
   <% else %>
-    <div class="card mx-auto mt-5 shadow-sm bg-white rounded" style="width: 60vw;">
+    <div class="card mx-auto mt-5 shadow-sm rounded">
       <div class="card-body">
-        <h5 class="card-title text-center">Begin Here</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-          content.</p>
-
+        <h3 class="card-title text-center">Begin Here</h3>
+        <div class="d-flex">
+          <img class="img-fluid mr-2 img-checklist" src="/images/checklist.png" alt="Todo list clipboard image.">
+          <p class="card-text">
+            Are you busy? Is life seemingly taking over your day? This App is here to help you manage your activity list for the day. Remember to either login or create an account in the menu above. Your list is secure from other users. You have the ability to create new list items, edit them, and delete items as they are completed.
+          </p>
+        </div>
       </div>
     </div>
+    <blockquote class="card mx-auto mt-5 quote-card">
+      <p>“Those who are wise won't be busy, and those who are too busy can't be wise.”
+      </p>
+      <cite>Lin Yutang, The Importance of Living </cite>
+    </blockquote>
   <% end %>
 </div>
