@@ -20,6 +20,7 @@ Navigate to your newly created directory and run `bundle install`. Afterwards, r
 
 Say what the step will be
 
+![alt text](./sinatra-todo.mp4 "Video walk through")
 ## Deployment
 
 Add deploy instructions when [Heroku](https://www.heroku.com/) branch is finished.
