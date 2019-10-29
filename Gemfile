@@ -2,17 +2,24 @@ source 'http://rubygems.org'
 
 gem 'activerecord', '~> 4.2', '>= 4.2.6', require: 'active_record'
 gem 'bcrypt'
-gem 'dotenv'
 gem 'faker'
-gem 'pry'
 gem 'rake'
 gem 'require_all'
 gem 'shotgun'
 gem 'sinatra'
 gem 'sinatra-activerecord', require: 'sinatra/activerecord'
-gem 'sqlite3', '~> 1.3.6'
 gem 'thin'
 gem 'tux'
+
+group :production do
+  gem 'pg'
+end
+
+group :development do
+  gem 'dotenv'
+  gem 'pry'
+  gem 'sqlite3', '~> 1.3.6'
+end
 
 group :test do
   gem 'capybara'
