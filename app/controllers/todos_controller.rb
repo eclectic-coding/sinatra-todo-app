@@ -36,7 +36,6 @@ class TodosController < ApplicationController
     if logged_in?
       @user = User.find(session[:user_id])
       @todos = Todo.where(user_id: current_user)
-      # binding.pry
       erb :'/todos/index'
     else
       redirect '/login'

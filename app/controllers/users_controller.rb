@@ -1,6 +1,5 @@
 require 'pry'
 
-
 class UsersController < ApplicationController
 
   get '/signup' do
