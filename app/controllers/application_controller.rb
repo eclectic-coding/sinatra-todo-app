@@ -2,6 +2,7 @@ require './config/environment'
 require 'dotenv'
 Dotenv.load
 require 'securerandom'
+require 'rack-flash'
 
 class ApplicationController < Sinatra::Base
 
@@ -9,6 +10,7 @@ class ApplicationController < Sinatra::Base
     set :public_folder, 'public'
     set :views, 'app/views'
     enable :sessions
+    use Rack::Flash
     set :session_secret, ENV['SESSION_SECRET'] { SecureRandom.hex(64) }
   end
 
