@@ -12,7 +12,7 @@ class SessionsController < ApplicationController
       session[:user_id] = user.id
       redirect '/todos'
     else
-
+      flash[:danger] = 'Invalid login credentials!'
       redirect '/login'
     end
   end
