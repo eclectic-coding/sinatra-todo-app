@@ -43,13 +43,14 @@
 
 <main class="container-full-height">
   <% flash.keys.each do |type| %>
-    <div data-alert class="flash bg-<%= type %> p-3 mx-auto text-center text-white">
-      <%= flash[type] %>
-      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-        <span aria-hidden="true">×</span>
+    <div class="alert alert-danger bg-danger alert-dismissible fade show w-100 border-0 text-center" role="alert">
+      <strong class="text-white mx-auto"><%= flash[type] %></strong>
+      <button type="button" class="btn close" data-dismiss="alert" aria-label="Close">
+        <span class="text-white" aria-hidden="true">×</span>
       </button>
     </div>
-  <% end %>
+
+<% end %>
 
   <%= yield %>
 </main>
