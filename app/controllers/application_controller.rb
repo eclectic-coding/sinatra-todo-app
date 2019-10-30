@@ -6,6 +6,7 @@ require 'securerandom'
 class ApplicationController < Sinatra::Base
 
   configure do
+    set :database_file, 'config/database.yml'
     set :public_folder, 'public'
     set :views, 'app/views'
     enable :sessions
