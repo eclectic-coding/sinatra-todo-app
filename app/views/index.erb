@@ -3,9 +3,11 @@
     <div class="card mx-auto mt-5 shadow-sm bg-white rounded">
       <div class="card-body">
         <h5 class="card-title">Welcome, <%= current_user.name.upcase %></h5>
-        <p class="card-text">todo interface here</p>
+        <p class="card-text">Click below to create or show your ToDo's.</p>
         <a class="btn btn-primary btn-sm text-light mx-1 my-3" href="/todos/new" role="button">New ToDo</a>
-        <a class="btn btn-primary btn-sm text-light mx-1 my-3" href="/todos/delete" role="button"> Delete ToDo </a>
+<!--        <a class="btn btn-primary btn-sm text-light mx-1 my-3" href="/todos/delete" role="button"> Delete ToDo </a>-->
+        <a class="btn btn-primary btn-sm text-light mx-1 my-3" href="/todos" role="button"> Show ToDo List </a>
+
       </div>
     </div>
 
