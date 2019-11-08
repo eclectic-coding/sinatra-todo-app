@@ -3,44 +3,28 @@ class TodosController < ApplicationController
 
   # CRUD - Create
   get '/todos/new' do
-    if logged_in?
-      @user = User.find_by(id: session[:user_id])
-      erb :'/todos/new'
-    else
-      redirect '/login'
-    end
+    redirect_logged_in
+    erb :'/todos/new'
   end
 
   post '/todos' do
-    if logged_in?
-      @user = User.find(session[:user_id])
-      # binding.pry
-
-      if params[:title].empty?
-        redirect '/todos/new'
-      else
-        @user = User.find_by(id: session[:user_id])
-        @todo = Todo.new
-        @todo.title = params[:title]
-        @todo.user_id = @user.id
-        @todo.save
-        redirect '/todos'
-      end
+    redirect_logged_in
+    if params[:title].empty?
+      redirect '/todos/new'
     else
-      redirect '/login'
+      current_user
+      @todo = Todo.new
+      @todo.title = params[:title]
+      @todo.user_id = @user.id
+      @todo.save
+      redirect '/todos'
     end
   end
 
   # CRUD - Read
   get '/todos' do
-    if logged_in?
-      @user = User.find(session[:user_id])
-      @todos = Todo.where(user_id: current_user)
-      # binding.pry
-      erb :'/todos/index'
-    else
-      redirect '/login'
-    end
+    users_todos
+    erb :'/todos/index'
   end
 
   get '/todos/:id' do
@@ -60,7 +44,7 @@ class TodosController < ApplicationController
   end
 
   get '/todos/:id/edit' do
-    @user = User.find_by(id: session[:user_id])
+    @user = current_user
     @todo = Todo.find_by_id(params[:id])
     if @todo && @user == current_user
       erb :'/todos/edit'

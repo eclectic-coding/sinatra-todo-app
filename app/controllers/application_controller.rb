@@ -27,5 +27,21 @@ class ApplicationController < Sinatra::Base
       @current_user ||= User.find_by(id: session[:user_id]) if session[:user_id]
     end
 
+    def redirect_logged_in
+      if logged_in?
+        @user = current_user
+      else
+        redirect '/login'
+      end
+    end
+
+    def users_todos
+      @user = redirect_logged_in
+      @todos = Todo.where(user_id: current_user)
+      if @todo && @user == current_user
+        redirect '/todos'
+      end
+    end
+
   end
 end
