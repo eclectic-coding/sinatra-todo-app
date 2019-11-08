@@ -5,24 +5,25 @@
 
       <p>Would you like to delete?</p>
       <ul class="pl-0">
-          <li class="list-group-item d-flex justify-content-between my-2">
-            <%= @todo.title %>
-            <div>
+        <li class="list-group-item d-flex justify-content-between my-2">
+          <%= @todo.title %>
+          <div>
                 <span class="mx-2">
                   <a href="<%= @todo.id %>/edit" class="text-success"><i class="fas fa-pen"></i></a>
                 </span>
-              <span class="mx-2 text-danger">
+            <span class="mx-2 text-danger">
                   <a href="<%= @todo.id %>" class="text-danger"><i class="fas fa-trash text-danger"></i></a>
                 </span>
-            </div>
-          </li>
+          </div>
+        </li>
       </ul>
-
-      <form method="POST" action="/todos/<%= @todo.id %>">
-        <input type="hidden" name="_method" value="delete" />
-        <input class="btn btn-primary" type="submit" value="delete" />
-      </form>
-
+      <span class="d-flex">
+        <form method="POST" action="/todos/<%= @todo.id %>">
+          <input type="hidden" name="_method" value="delete"/>
+          <input class="btn btn-primary" type="submit" value="delete"/>
+        </form>
+        <a class="btn btn-primary btn-sm text-light mx-2 pt-2" href="/todos" role="button">Show ToDo List</a>
+      </span>
     </div>
   </div>
 </div>
