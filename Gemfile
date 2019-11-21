@@ -18,7 +18,7 @@ end
 group :development do
   gem 'dotenv'
   gem 'pry'
-  gem 'sqlite3', '~> 1.3.6'
+  gem 'sqlite3', '~> 1.4.0'
 end
 
 group :test do
