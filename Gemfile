@@ -5,6 +5,7 @@ gem 'bcrypt'
 gem 'dotenv'
 gem 'faker'
 gem 'pg', '~> 0.18'
+gem 'pry'
 gem 'rack-flash3'
 gem 'rake'
 gem 'require_all'
@@ -13,10 +14,6 @@ gem 'sinatra'
 gem 'sinatra-activerecord', require: 'sinatra/activerecord'
 gem 'thin'
 gem 'tux'
-
-group :development do
-  gem 'pry'
-end
 
 group :test do
   gem 'capybara'
