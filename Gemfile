@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'activerecord', '~> 6.1.7', require: 'active_record'
+gem 'activerecord', '~> 6.1.7.3', require: 'active_record'
 gem 'bcrypt'
 gem 'dotenv'
 gem 'faker'
